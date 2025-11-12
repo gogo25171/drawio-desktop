@@ -1,8 +1,16 @@
+# IDE et éditeurs
 .idea
-node_modules
+.vscode
 .project
-/dist/
 /.classpath
 /.settings
+
+# Dépendances
+node_modules
 package-lock.json
+
+# Build et distribution
+/dist/
+
+# Fichiers système
 .DS_Store
