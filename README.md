@@ -1,8 +1,6 @@
 # drawio-desktop
 
-About
-
------
+## About
 
 **drawio-desktop** is a diagramming desktop app based on [Electron](https://electronjs.org/) that wraps the [core draw.io editor](https://github.com/jgraph/drawio).
 
@@ -10,9 +8,7 @@ Download built binaries from the [releases section](https://github.com/jgraph/dr
 
 **Can I use this app for free?** Yes, under the apache 2.0 license. If you don't change the code and accept it is provided "as-is", you can use it for any purpose.
 
-Security
-
------
+## Security
 
 draw.io Desktop is designed to be completely isolated from the Internet, apart from the update process. This checks github.com at startup for a newer version and downloads it from an AWS S3 bucket owned by Github. All JavaScript files are self-contained, the Content Security Policy forbids running remotely loaded JavaScript.
 
@@ -20,17 +16,13 @@ No diagram data is ever sent externally, nor do we send any analytics about app 
 
 Security and isolating the app are the primarily objectives of draw.io desktop. If you ask for anything that involves external connections enabled in the app by default, the answer will be no.
 
-Support
-
------
+## Support
 
 Support is provided on a reasonable business constraints basis, but without anything contractually binding. All support is provided via this repo. There is no private ticketing support for non-paying users.
 
 Purchasing draw.io for Confluence or Jira does not entitle you to commercial support for draw.io desktop.
 
-Developing
-
------
+## Developing
 
 **draw.io** is a git submodule of **drawio-desktop**. To get both you need to clone recursively:
 
@@ -39,8 +31,9 @@ Developing
 To run this:
 
 1. `npm install` (in the root directory of this repo)
-2. [internal use only] export DRAWIO_ENV=dev if you want to develop/debug in dev mode.
-3. `npm start` _in the root directory of this repo_ runs the app. For debugging, use `npm start --enable-logging`.
+2. `npm start` _in the root directory of this repo_ runs the app. 
+   For debugging, use `npm start --enable-logging`.
+   For dev mode, use `DRAWIO_ENV=dev npm start`.
 
 Note: If a symlink is used to refer to drawio repo (instead of the submodule), then symlink the `node_modules` directory inside `drawio/src/main/webapp` also.
 
@@ -79,7 +72,7 @@ the long term viability of the project.
 
 ## TODO
 
-### Code generation and import from diagrams
+### Code generation and import from diagrams (En cours)
 
 • Enable code generation from diagrams, similar to how Brainboard does for Terraform.
 • Example: create a UML class diagram and automatically export the corresponding structure to Java, Python, etc. (similar to what staruml.io can do)
@@ -87,7 +80,7 @@ the long term viability of the project.
 
 • This would allow draw.io to be used as a true bridge between visual design and implementation.
 
-### Extension and openness of the plugin system
+### Extension and openness of the plugin system (Pas encore commencé)
 
 • Make plugins available not only on the web version, but also on desktop and integrated versions (Confluence, VS Code, etc.) <https://www.drawio.com/doc/faq/plugins>.
 

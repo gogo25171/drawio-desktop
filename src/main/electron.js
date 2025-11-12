@@ -1115,10 +1115,13 @@ app.whenReady().then(() =>
 	
 	// Handler pour le rechargement de l'application (plugin refresh-button)
 	ipcMain.on('reload-app', (e) => {
+		console.log('===== RELOAD-APP EVENT RECEIVED =====');
 		const win = BrowserWindow.fromWebContents(e.sender);
 		if (win) {
-			console.log('Reloading application window...');
+			console.log('Window found, reloading...');
 			win.reload();
+		} else {
+			console.log('ERROR: Window not found!');
 		}
 	});
 
