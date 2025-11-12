@@ -1112,6 +1112,15 @@ app.whenReady().then(() =>
 	ipcMain.on('zoomIn', zoomInFn);
 	ipcMain.on('zoomOut', zoomOutFn);
 	ipcMain.on('resetZoom', resetZoomFn);
+	
+	// Handler pour le rechargement de l'application (plugin refresh-button)
+	ipcMain.on('reload-app', (e) => {
+		const win = BrowserWindow.fromWebContents(e.sender);
+		if (win) {
+			console.log('Reloading application window...');
+			win.reload();
+		}
+	});
 
 	if (isMac)
 	{
